@@ -1,0 +1,19 @@
+Title: Tiêu đề của bài báo hoặc tin tức.
+
+Sapo: Phần mô tả ngắn gọn, tóm tắt về nội dung chính của tin tức.
+ Thường được đặt dưới tiêu đề để người đọc có cái nhìn tổng quan về nội dung của
+ bài viết.
+
+Body: Phần chính của nội dung tin tức, nơi chứa thông tin chi tiết và đầy đủ về sự kiện hoặc nội dung cần truyền đạt.
+
+Author: Tác giả của bài viết, người đã viết hoặc thực hiện phóng sự.
+
+Category: Phân loại tin tức vào các nhóm, chủ đề hoặc danh mục khác nhau, giúp người đọc dễ dàng tìm kiếm thông tin.
+
+Publish Date: Ngày và giờ mà tin tức được công bố hoặc đăng tải lên trang web.
+
+Avatar: Hình ảnh đại diện, thường là hình ảnh đại diện của tác giả hoặc hình ảnh minh họa liên quan đến nội dung tin tức.
+
+Tag: Các từ khóa hoặc nhãn được gán cho tin tức, giúp tìm kiếm và phân loại tin tức dễ dàng hơn.
+
+News Relation: Các tin tức liên quan, thường là các liên kết đến các bài viết khác hoặc các sự kiện liên quan.
