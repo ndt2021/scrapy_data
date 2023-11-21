@@ -23,6 +23,14 @@ class TestSpider(scrapy.Spider):
         # sapo
         # sapo = response.xpath('/html/body/div[2]/div/div[3]/div[1]/p').get()
         sapo = response.css('body > div.site-body > div > div.article > div.article__sapo.cms-desc> p::text').get()
+
+        #category
+        category = response.css('body > div.site-body > div > div.breadcrumb.breadcrumb-detail > h2:nth-child(1) > a::text').get()
+
+        # avatar
+        avatar = response.css('body > div.site-body > div > div.article > div.col > div.main-col.content-col > figure > img::attr(src)::text').get()
+
+
         # Trích xuất nội dung từ tất cả các thẻ <p>
         paragraphs = response.xpath('//p/text()').getall()
 
@@ -33,6 +41,9 @@ class TestSpider(scrapy.Spider):
         self.log(f'Title: {title}, Author: {author}')
         self.log(f'Publish date: {publish_date}')
         self.log(f'Sapo: {sapo}')
+        self.log(f'Category: {category}')
+        self.log(f'avatar {avatar}')
+        self.log(f'url_avatar: {avatar}')
 
         # self.log(f'Content: {content}')
         # Ghi dữ liệu vào file văn bản (txt)
@@ -41,4 +52,6 @@ class TestSpider(scrapy.Spider):
                        f'Author: {author}\n\n'
                        f'Date: {publish_date}\n\n'
                        f'Sapo: {sapo}\n\n\n'
+                       f'Category: {category}\n\n\n'
+                       f'url_avatar: {avatar}\n\n\n'
                        f'Content:\n{content}\n\n')
