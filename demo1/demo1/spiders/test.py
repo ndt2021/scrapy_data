@@ -8,7 +8,9 @@ class TestSpider(scrapy.Spider):
     allowed_domains = ['www.vietnamplus.vn']
     start_urls = [
         'https://www.vietnamplus.vn/giuong-cao-ngon-co-dai-doan-ket-toan-dan-toc-xay-dung-dat-nuoc-giau-manh-post908585.vnp',
-        'https://www.vietnamplus.vn/cho-doi-gi-o-hai-tran-thuc-chien-dau-tien-cua-huan-luyen-vien-troussier-post907883.vnp'
+        'https://www.vietnamplus.vn/cho-doi-gi-o-hai-tran-thuc-chien-dau-tien-cua-huan-luyen-vien-troussier-post907883.vnp',
+        'https://www.vietnamplus.vn/kinhte/batdongsan/',
+        'https://www.vietnamplus.vn/kinhte/thong-cao-bao-chi/'
     ]
 
     def start_requests(self):

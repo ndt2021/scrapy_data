@@ -17,7 +17,7 @@ class VietnamplusSpider(scrapy.Spider):
         self.log(f'Article Links: {article_links}')
 
         # Mở hoặc tạo file để lưu các liên kết bài viết
-        with open('article_links.txt', 'w', encoding='utf-8') as file:
+        with open('article_links.txt', 'a', encoding='utf-8') as file:
             # Lưu từng liên kết vào file
             for article_link in article_links:
                 file.write(article_link + '\n')
