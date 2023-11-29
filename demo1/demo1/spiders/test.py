@@ -6,17 +6,19 @@ import scrapy
 class TestSpider(scrapy.Spider):
     name = 'test'
     allowed_domains = ['www.vietnamplus.vn']
-    start_urls = [
+
+    start_urls = ['https: // www.vietnamplus.vn /']
+
+    def start_requests(self):
+        # Trong phương thức này, self là một tham chiếu đến đối tượng Spider hiện tại (được tạo từ lớp MySpider)
+        # self.start_urls là danh sách các URL khởi đầu được đặt trong thuộc tính start_urls của đối tượng Spider
+        link =[
         'https://www.vietnamplus.vn/giuong-cao-ngon-co-dai-doan-ket-toan-dan-toc-xay-dung-dat-nuoc-giau-manh-post908585.vnp',
         'https://www.vietnamplus.vn/cho-doi-gi-o-hai-tran-thuc-chien-dau-tien-cua-huan-luyen-vien-troussier-post907883.vnp',
         'https://www.vietnamplus.vn/kinhte/batdongsan/',
         'https://www.vietnamplus.vn/kinhte/thong-cao-bao-chi/'
     ]
-
-    def start_requests(self):
-        # Trong phương thức này, self là một tham chiếu đến đối tượng Spider hiện tại (được tạo từ lớp MySpider)
-        # self.start_urls là danh sách các URL khởi đầu được đặt trong thuộc tính start_urls của đối tượng Spider
-        for url in self.start_urls:
+        for url in link:
             yield scrapy.Request(url, callback=self.parse)
     def parse(self, response):
         # Trích xuất tiêu đề bài viết
