@@ -9,16 +9,35 @@ class TestSpider(scrapy.Spider):
 
     start_urls = ['https: // www.vietnamplus.vn /']
 
+    x=0
+
     def start_requests(self):
         # Trong phương thức này, self là một tham chiếu đến đối tượng Spider hiện tại (được tạo từ lớp MySpider)
         # self.start_urls là danh sách các URL khởi đầu được đặt trong thuộc tính start_urls của đối tượng Spider
         link =[
-        'https://www.vietnamplus.vn/giuong-cao-ngon-co-dai-doan-ket-toan-dan-toc-xay-dung-dat-nuoc-giau-manh-post908585.vnp',
-        'https://www.vietnamplus.vn/cho-doi-gi-o-hai-tran-thuc-chien-dau-tien-cua-huan-luyen-vien-troussier-post907883.vnp',
-        'https://www.vietnamplus.vn/kinhte/batdongsan/',
-        'https://www.vietnamplus.vn/kinhte/thong-cao-bao-chi/'
+        'https://www.vietnamplus.vn/topic/75-nam-bac-ho-ra-loi-keu-goi-thi-dua-ai-quoc-1204.vnp',
+'https://www.vietnamplus.vn/thu-tuong-chinh-phu-tao-moi-dieu-kien-thuan-loi-nhat-cho-doi-moi-sang-tao-post910005.vnp',
+'https://www.vietnamplus.vn/thu-tuong-chinh-phu-tao-moi-dieu-kien-thuan-loi-nhat-cho-doi-moi-sang-tao-post910005.vnp',
+'https://www.vietnamplus.vn/tai-nang-khoi-nghiep-doi-moi-sang-tao-buyo-bioplastics-gianh-giai-nhat-post909883.vnp',
+'https://www.vietnamplus.vn/khai-mac-trien-lam-san-pham-dich-vu-khoi-nghiep-doi-moi-sang-tao-post909780.vnp',
+'https://www.vietnamplus.vn/xanh-hoa-nganh-det-may-doanh-nghiep-viet-phai-co-dinh-huong-chien-luoc-ro-rang-post910026.vnp',
+'https://www.vietnamplus.vn/di-tim-loi-giai-cho-bai-toan-phat-huy-gia-tri-tuong-trong-doi-song-hien-dai-post910004.vnp',
+'https://www.vietnamplus.vn/canh-bao-gio-manh-song-lon-tren-nhieu-vung-bien-cua-ca-nuoc-post909994.vnp',
+'https://www.vietnamplus.vn/canh-bao-gio-manh-song-lon-tren-nhieu-vung-bien-cua-ca-nuoc-post909994.vnp',
+'https://www.vietnamplus.vn/con-nhieu-su-kien-dien-ra-lon-xon-mat-my-quan-o-khu-ven-ho-hoan-kiem-post910019.vnp',
+'https://www.vietnamplus.vn/con-nhieu-su-kien-dien-ra-lon-xon-mat-my-quan-o-khu-ven-ho-hoan-kiem-post910019.vnp',
+'https://www.vietnamplus.vn/phat-trien-quan-he-voi-trung-quoc-la-lua-chon-chien-luoc-lau-dai-cua-viet-nam-post910022.vnp',
+'https://www.vietnamplus.vn/phat-trien-quan-he-voi-trung-quoc-la-lua-chon-chien-luoc-lau-dai-cua-viet-nam-post910022.vnp',
+'https://www.vietnamplus.vn/topic/tin-moi-nhan-111.vnp',
+'https://www.vietnamplus.vn/quang-ninh-nam-hoc-sinh-o-van-don-nghi-ngo-doc-sau-khi-an-keo-la-post910021.vnp',
+'https://www.vietnamplus.vn/nhieu-bat-cap-trong-kiem-soat-hoat-dong-khai-thac-thuy-san-tai-cang-ca-post910023.vnp',
+'https://www.vietnamplus.vn/tin-nong-2511-ban-bi-thu-yeu-cau-khong-tham-hoi-chuc-tet-lanh-dao-post910012.vnp',
+'https://www.vietnamplus.vn/phu-nu-hay-len-tieng-khi-bi-bao-luc-hoac-nhin-thay-bao-luc-post909999.vnp',
+'https://www.vietnamplus.vn/ha-noi-di-doi-6-ho-dan-ra-khoi-khu-vuc-sut-lun-tai-huyen-quoc-oai-post909997.vnp'
     ]
         for url in link:
+            print("BAI SO--------------------------------------------------------------------------------------------------------------------------------------" )
+            # self.x=self.x+1
             yield scrapy.Request(url, callback=self.parse)
     def parse(self, response):
         # Trích xuất tiêu đề bài viết
@@ -63,7 +82,9 @@ class TestSpider(scrapy.Spider):
         self.log(f'Content: {content}')
         # Ghi dữ liệu vào file văn bản (txt)
         with open('output.txt', 'a', encoding='utf-8') as file:
-            file.write(f'Title: {title}\n'
+            file.write(f'\n\n\n\n\n\n\n\n\n\n\n'
+                       f'______________________________________________________________________________________________________'
+                       f'Title: {title}\n'
                        f'Author: {author}\n\n'
                        f'Date: {publish_date}\n\n'
                        f'Sapo: {sapo}\n\n\n'
