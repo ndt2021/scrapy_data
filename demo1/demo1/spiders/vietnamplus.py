@@ -4,7 +4,7 @@ import re
 class VietnamplusSpider(scrapy.Spider):
     name = "vietnamplus"
     allowed_domains = ["www.vietnamplus.vn"]
-    start_urls = ['https: // www.vietnamplus.vn /']
+    start_urls = ["https://www.vietnamplus.vn/"]
 
     def parse(self, response):
         # Trích xuất tất cả các liên kết trên trang
