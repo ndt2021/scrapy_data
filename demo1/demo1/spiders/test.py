@@ -14,9 +14,7 @@ class TestSpider(scrapy.Spider):
         # self.start_urls là danh sách các URL khởi đầu được đặt trong thuộc tính start_urls của đối tượng Spider
         link =[
         'https://www.vietnamplus.vn/giuong-cao-ngon-co-dai-doan-ket-toan-dan-toc-xay-dung-dat-nuoc-giau-manh-post908585.vnp',
-        'https://www.vietnamplus.vn/cho-doi-gi-o-hai-tran-thuc-chien-dau-tien-cua-huan-luyen-vien-troussier-post907883.vnp',
-        'https://www.vietnamplus.vn/kinhte/batdongsan/',
-        'https://www.vietnamplus.vn/kinhte/thong-cao-bao-chi/'
+        'https://www.vietnamplus.vn/cho-doi-gi-o-hai-tran-thuc-chien-dau-tien-cua-huan-luyen-vien-troussier-post907883.vnp'
     ]
         for url in link:
             yield scrapy.Request(url, callback=self.parse)
